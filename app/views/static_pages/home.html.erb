@@ -1,0 +1,22 @@
+
+<% provide(:title, "Home") %> 
+<div class="center jumbotron" id="homebody"> 
+ <h1>Bienvenido:</h1> 
+ 
+  <h2> 
+    Aqui puedes encontar todo lo relacionado a criptomonedas <br> 
+    todo sobre los precios y los mejores exchage
+  </h2>
+  
+ 
+  <%= image_tag("pngegg.png", alt: "Bit coin",id:"Bit2") %>
+
+  <% if signed_in? %>
+    
+    <%= link_to "Cerrar session", destroy_user_session_path, method: :delete,class: "btn btn-lg btn-danger"%>
+    
+  <% else %>
+    <%= link_to "Ingresar", new_user_session_path,class: "btn btn-lg btn-primary" %>
+  <% end %>
+  <%= image_tag("pngegg.png", alt: "Bit coin",id:"Bit2") %>
+</div>

@@ -1,0 +1,96 @@
+@import "bootstrap-sprockets"; 
+@import "bootstrap";
+
+#logo
+{
+    font-family: 'Times New Roman', Times, serif;
+    color: orange;
+    font-size: 30px;
+}
+#icono{
+
+    width: 40px;
+    height: 40px;
+    margin-right: 4px;
+    margin-left: 0px;
+    
+}
+
+body{
+    margin: 0;
+    
+    background-image: url("abstract-luxury-blur-dark-grey-and-black-gradient-used-as-background-studio-wall-for-display-your-products.jpg");
+   
+    
+
+}
+
+#homebody{
+    margin-top: 100px;
+
+    opacity: 1;
+}
+#listabody
+{
+    margin-top: 100px;
+    
+   
+}
+#list_title{
+    border-bottom: 6px solid #2124e2;
+    margin-bottom: 50px;
+}
+.container{
+    margin-left: 1;
+}
+#Bit{
+    
+    width: 60px;
+    height: 60px;;
+}
+
+#Bit2{
+    
+    width: 60px;
+    height: 60px;;
+}
+header{
+    height: 60px;
+}
+nav{
+    margin-top: 5px;
+}
+
+#buscar_buttom{
+    border-radius: 25px;
+    margin-top: 10px;
+   
+}
+#TableSearch
+{
+    margin-top: 20px;
+    
+}
+li{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#logout{
+    
+    color: red;
+    
+}
+#idalert{
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#login{
+    color: rgb(91, 91, 235);
+}
+
+#Reg{
+    color: rgb(68, 219, 68);
+}

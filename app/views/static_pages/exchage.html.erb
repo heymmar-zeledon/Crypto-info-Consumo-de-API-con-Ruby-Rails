@@ -1,0 +1,40 @@
+<% provide(:title, "Casa de cambio") %> 
+<div class="center jumbotron" id="listabody"> 
+ <h2 id="list_title">Lista de casas de cambio</h2>
+
+ <div class="center jumbotron"> 
+ <table class="table table-striped table-bordered" >
+    <thead class="thead-dark">
+      <tr>
+        
+        <th>Ranking</th>
+        <th>Nombre</th>
+        <th>Volumen de transacciones en USD</th>
+        <th>Sitio web</th>
+      </tr>
+    </thead>
+    <tbody>
+     <%if @value == -1 %>
+        <td colspan='4'> <p class="alert alert-danger">se ha exedido el limite de peticiones, recargue la pagina</p> 
+          
+        <%= link_to "Recargar", '/static_pages/exchage', class: "btn btn-lg btn-primary" %>
+        </td>    
+    <%else %>
+      <% @results["data"].each do |moneda| %>
+            <tr>
+            
+            <td> <%= moneda["rank"]%></td>
+            <td> <%= moneda["name"]%></td>
+            <td> <%= moneda["volumeUsd"]%></td>
+            <td><%= link_to  moneda["name"], moneda["exchangeUrl"], target: :_blank  %></td>
+            
+            
+            </tr>
+        <%end %>
+    <% end %>
+      
+      
+    </tbody>
+  </table>
+
+</div>

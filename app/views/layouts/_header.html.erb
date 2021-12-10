@@ -1,0 +1,25 @@
+<header class="navbar navbar-fixed-top navbar-inverse"> 
+  <div class="container">
+    <nav> 
+    <%= image_tag("exchange.png", alt: "Logo CRYPTO INFO",id:"icono") %>
+    <%= link_to "CRIPTOINFO", '/', id: "logo" %> 
+      <ul class="nav navbar-nav navbar-right">
+
+      <% if signed_in? %>
+        <li><%= link_to "Home", '/' %></li> 
+        <li><%= link_to "Casas de cambio", ' /static_pages/exchage' %></li> 
+        <li><%= link_to "Lista de criptomonedas", '/static_pages/listamonedas' %></li>
+        <li><%= link_to "Buscar Criptomoneda", '/static_pages/buscarmonedas' %></li>
+        <li> <%= link_to "Salir", destroy_user_session_path, method: :delete,id: "logout"%> </li>
+        
+      <% else %>
+      <li><%= link_to "Home", '/' %></li> 
+      <li><%= link_to "Registrarse", new_user_registration_path, id: "Reg" %> </li>
+        
+        <li><%= link_to "Ingresar", new_user_session_path, id: "login"%></li>
+      <% end %>
+        
+      </ul> 
+    </nav> 
+  </div> 
+</header>

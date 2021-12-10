@@ -1,0 +1,50 @@
+<% provide(:title, "Buscar") %> 
+
+<div class="center jumbotron" id="listabody"> 
+ <h2 id="list_title">Buscar crypto</h2>
+
+ <%= form_with url: " /static_pages/buscarmonedas", method: :get do |form| %>
+    <%= form.label :query, "Buscar Crypto:" %>
+    <%= form.text_field :query ,class:"form-control"%>
+    <%= form.submit  "Buscar",class: "btn btn-primary input-group-text bg-info" %>
+  <% end %>
+  <table class="table table-bordered" id="TableSearch">
+  <thead>
+  <tr>
+  <th colspan="4">Moneda: <%=@monedSearch %> </th>
+  </tr>
+    <tr>
+      <th>Exchangue</th>
+      <th>Id de la moneda de cambio</th>
+      <th>Simbolo de la moneda de cambio</th>
+      <th>Precio USD</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <%if @aprende == -1%>
+       <td colspan='4'> <p class="alert alert-danger">Fallo al conectarse con la api o Criptomoneda no encontrada <br>
+       Asegurece de escribir correctamente el nombre de la moneda sin caracteres especiales (/ ? _- , etc.) </p> 
+       <%= link_to "Intenta Recargar", '/static_pages/buscarmonedas?query='+@monedSearch, class: "btn btn-lg btn-primary" %>
+       </td>
+    <%else %>
+    <%if @aprende == 0 %>
+
+    <% @results["data"].each do |moneda| %>
+        <tr>
+        <td> <%= moneda["exchangeId"]%></td>
+        <td> <%= moneda["quoteId"]%></td>
+        <td> <%= moneda["quoteSymbol"]%></td>
+        <td> <%= moneda["priceUsd"]%></td>
+        </tr>
+        <%end %>  
+      <% end%>
+        
+        
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

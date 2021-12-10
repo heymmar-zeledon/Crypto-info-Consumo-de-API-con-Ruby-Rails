@@ -1,0 +1,38 @@
+<% provide(:title, "Lista de monedas") %> 
+
+
+<div class="center jumbotron" id="listabody"> 
+ <h2 id="list_title">Lista de crypto monedas</h2>
+
+ <table class="table table-striped table-bordered" >
+    <thead>
+      <tr>
+        <th>Simbolo</th>
+        <th>Ranking</th>
+        <th>Nombre</th>
+        <th>Precio en dolares</th>
+      </tr>
+    </thead>
+    <tbody>
+     <%if @value == -1 %>
+        <td colspan='4'> <p class="alert alert-danger">se ha exedido el limite de peticiones, recargue la pagina</p> 
+          
+        <%= link_to "Recargar", '/static_pages/listamonedas', class: "btn btn-lg btn-primary" %>
+        </td>    
+    <%else %>
+      <% @results["data"].each do |moneda| %>
+            <tr>
+            <td> <%= moneda["symbol"]%></td>
+            <td> <%= moneda["rank"]%></td>
+            <td> <%= moneda["name"]%></td>
+            <td> <%= moneda["priceUsd"]%></td>
+            
+        </tr>
+        <%end %>
+    <% end %>
+      
+      
+    </tbody>
+  </table>
+
+</div>
