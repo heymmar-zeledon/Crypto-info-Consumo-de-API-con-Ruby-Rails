@@ -1,24 +1,10 @@
 # README
+Antes de probar la aplicacion ejecute los siguientes comandos en su terminal: (*obligatorio*)
+Necesita tener instalado webpacker y yarn para poder ejecutar con exto y obtener las dependencias para correr el programa en el navegador
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ubiquese en el proyecto y ejecute:
+1->> bundle install
+2->> yarn
+3->> rails s
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Y listo habra su navegador y habra en localhost la aplicacion
